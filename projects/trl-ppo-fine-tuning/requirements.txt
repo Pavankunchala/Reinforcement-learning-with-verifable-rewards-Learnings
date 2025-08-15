@@ -1,0 +1,6 @@
+# Core dependencies for TRL
+trl
+torch
+transformers
+datasets
+accelerate

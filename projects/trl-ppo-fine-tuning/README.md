@@ -43,6 +43,31 @@ python train.py \
     --use-4bit
 ```
 
+## Comparing Model Outputs
+
+After fine-tuning, you can compare the performance of the base model against your updated (LoRA-tuned) model using the `compare_base_vs_lora.py` script.
+
+This script runs a set of prompts through both the original base model and the model with your LoRA adapters and saves the outputs to a CSV file for easy comparison.
+
+### Example
+
+```bash
+python compare_base_vs_lora.py ^
+    --base-model Qwen/Qwen3-4B-Instruct-2507 ^
+    --adapter-dir .\output ^
+    --use-4bit ^
+    --prompts "Explain GRPO in 2 sentences." "What is the capital of Japan?"
+```
+
+You can also provide prompts from a text file:
+
+```bash
+python compare_base_vs_lora.py ^
+    --base-model Qwen/Qwen3-4B-Instruct-2507 ^
+    --adapter-dir .\output ^
+    --prompts-file .\prompts.txt
+```
+
 ## Key Arguments
 
 #### Model & Data Arguments

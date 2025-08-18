@@ -1,0 +1,24 @@
+# Core dependencies for Financial Reasoning Enhanced
+torch>=2.0.0
+transformers>=4.47.0
+trl>=0.14.0
+datasets>=3.2.0
+accelerate>=0.20.0
+
+# Unsloth for efficient fine-tuning
+unsloth
+
+# Financial analysis and sentiment
+sentence-transformers
+
+# Optional visualization dependencies
+matplotlib
+seaborn
+
+# Utilities
+numpy
+scipy
+scikit-learn
+
+# Optional: 4-bit quantization (handled by Unsloth)
+# bitsandbytes

@@ -1,5 +1,8 @@
 # TRL PPO Fine-Tuning Example
 
+
+[Blog Link](https://pavankunchalapk.medium.com/windows-friendly-grpo-fine-tuning-with-trl-from-zero-to-verifiable-rewards-f28008c89323)
+
 This project demonstrates how to fine-tune a language model using Proximal Policy Optimization (PPO) with the `trl` library. The script is designed to work with models and datasets from the Hugging Face Hub or from local storage.
 
 ## Setup

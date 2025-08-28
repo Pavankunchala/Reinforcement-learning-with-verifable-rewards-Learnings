@@ -1,0 +1,59 @@
+{
+  "comment": "Example configuration for SmolVLM-256M ChartQA fine-tuning",
+  "model": {
+    "base_model": "HuggingFaceTB/SmolVLM-256M-Instruct",
+    "output_dir": "smolvlm-256m-chartqa-sft"
+  },
+  "training": {
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs": 2,
+    "max_steps": 500,
+    "gradient_accumulation": 2,
+    "memory_limit_gb": 14.0
+  },
+  "lora": {
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05
+  },
+  "precision": {
+    "mixed_precision": "bf16",
+    "gradient_checkpointing": false
+  },
+  "data": {
+    "dataset": "HuggingFaceM4/ChartQA",
+    "train_split": "[:80%]",
+    "val_split": "[:20%]"
+  },
+  "presets": {
+    "high_performance_16gb": {
+      "batch_size": 16,
+      "memory_limit_gb": 14.0,
+      "lora_rank": 16,
+      "lora_alpha": 32
+    },
+    "balanced_12gb": {
+      "batch_size": 12,
+      "memory_limit_gb": 10.0,
+      "lora_rank": 16,
+      "lora_alpha": 32
+    },
+    "conservative_8gb": {
+      "batch_size": 8,
+      "memory_limit_gb": 6.0,
+      "lora_rank": 12,
+      "lora_alpha": 24,
+      "gradient_checkpointing": true
+    },
+    "maximum_accuracy": {
+      "batch_size": 12,
+      "learning_rate": 0.0005,
+      "epochs": 3,
+      "max_steps": 750,
+      "lora_rank": 24,
+      "lora_alpha": 48,
+      "memory_limit_gb": 12.0
+    }
+  }
+}
